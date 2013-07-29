@@ -14,8 +14,6 @@
 #include "WProgram.h"  
 #endif
 
-typedef unsigned int uint16;
-typedef unsigned char uint8;
 
 #define RETURN_ERROR 0
 #define RETURN_NORMAL 1
@@ -32,10 +30,10 @@ typedef unsigned char uint8;
 typedef struct 
 {
 	void (*pTask)(void);  // The task to be scheduled
-	uint16 delay;         // The interval before the task is first executed
-	uint16 period;        // Repeat period of the task
-	uint8 runMe;          // Is the task should be dispatched
-	uint8 co_op;          // If it is 1, it's a co-operative task
+	uint16_t delay;         // The interval before the task is first executed
+	uint16_t period;        // Repeat period of the task
+	uint8_t runMe;          // Is the task should be dispatched
+	uint8_t co_op;          // If it is 1, it's a co-operative task
 	// If it is 0, it's a pre-emptive task
 } Task;   
 
@@ -49,8 +47,8 @@ public:
 	void init(void);
 	void start(void);
 	void  dispatchTasks(void);
-	uint8 addTask(void ( *)(void), uint16, uint16, boolean);  
-	boolean   deleteTask(uint8);
+	uint8_t addTask(void ( *)(void), uint16_t, uint16_t, boolean);  
+	boolean   deleteTask(uint8_t);
 };
 
 static Schedule Sch;

@@ -9,7 +9,7 @@
 #include <avr/sleep.h>
 #include "Scheduler.h"
 
-uint8 g_errorCode;
+uint8_t g_errorCode;
 Task g_Tasks[MAX_TASKS];  // Tasks array
 
 
@@ -20,7 +20,7 @@ Task g_Tasks[MAX_TASKS];  // Tasks array
 void Schedule::init(void) 
 {
 	// Delete all tasks in the task array
-	uint8 i;
+	uint8_t i;
 	for (i = 0; i < MAX_TASKS; i++) 
 	{
 		deleteTask(i);
@@ -50,7 +50,7 @@ void Schedule::start(void)
 }
 
 /////////////////////////////////////////////////////////////////
-// unsigned char Schedule::addTask(void (*pFn)(), uint16 del, uint16 per, boolean co_op）
+// unsigned char Schedule::addTask(void (*pFn)(), uint16_t del, uint16_t per, boolean co_op）
 // Add a task
 //
 //    pFn    -    The task (function name) to be scheduled
@@ -62,9 +62,9 @@ void Schedule::start(void)
 //
 // Return:  Task IDs, which can be used in deleteTask() function
 //////////////////////////////////////////////////////////////////
-unsigned char Schedule::addTask(void (*pFn)(), uint16 del, uint16 per, boolean co_op)  
+unsigned char Schedule::addTask(void (*pFn)(), uint16_t del, uint16_t per, boolean co_op)  
 {
-	uint8 index = 0;
+	uint8_t index = 0;
 
 	// Find a gap in the array
 	while ((g_Tasks[index].pTask != 0) && (index < MAX_TASKS))
@@ -93,7 +93,7 @@ unsigned char Schedule::addTask(void (*pFn)(), uint16 del, uint16 per, boolean c
 }
 
 /////////////////////////////////////////////////////////////////
-// boolean Schedule::deleteTask(uint8 taskIndex)
+// boolean Schedule::deleteTask(uint8_t taskIndex)
 // Delete a task
 //
 //     taskIndex     -   ID of the task to be deleted
@@ -102,7 +102,7 @@ unsigned char Schedule::addTask(void (*pFn)(), uint16 del, uint16 per, boolean c
 //     RETURN_ERROR  -   Can't delete the task.
 //     RETURN_NORMAL -   Succeed in deleting the task
 //////////////////////////////////////////////////////////////////
-boolean Schedule::deleteTask(uint8 taskIndex) 
+boolean Schedule::deleteTask(uint8_t taskIndex) 
 {
 	boolean returnCode;
 
@@ -132,7 +132,7 @@ boolean Schedule::deleteTask(uint8 taskIndex)
 /////////////////////////////////////////////////////////////////
 void Schedule::dispatchTasks(void) 
 {
-	uint8 index;
+	uint8_t index;
 	for (index = 0; index < MAX_TASKS; index++)
 	{
 		// Run co-operative tasks only
@@ -183,7 +183,7 @@ void Schedule::_goToSleep()
 //////////////////////////////////////////////////////////////////
 ISR (TIMER1_COMPA_vect)
 {
-	uint8 index;  
+	uint8_t index;  
 	for (index = 0; index < MAX_TASKS; index++)
 	{
 		// Check if there is a task
