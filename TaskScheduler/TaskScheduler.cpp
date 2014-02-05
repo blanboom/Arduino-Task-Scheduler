@@ -1,8 +1,5 @@
 // Scheduler.cpp
 // A task scheduler library for arduino
-// Inspired by the book: PATTERNS FOR TIME-TRIGGERED EMBEDDED SYSTEMS
-//                       ISBN: 0-201-33138-1
-// Created by Blanboom 
 // http://blanboom.org
 
 
