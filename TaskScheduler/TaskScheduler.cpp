@@ -1,10 +1,10 @@
-// Scheduler.cpp
+// TaskScheduler.cpp
 // A task scheduler library for arduino
 // http://blanboom.org
 
 
 #include <avr/sleep.h>
-#include "Scheduler.h"
+#include "TaskScheduler.h"
 
 uint8_t g_errorCode;
 Task g_Tasks[MAX_TASKS];  // Tasks array
