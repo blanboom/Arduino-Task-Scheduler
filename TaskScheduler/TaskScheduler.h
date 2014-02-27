@@ -1,9 +1,9 @@
-// Scheduler.h
+// TaskScheduler.h
 // A task scheduler library for arduino - header file
 // http://blanboom.org
 
-#ifndef SCHEDULER_H
-#define SCHEDULER_H
+#ifndef TASK_SCHEDULER_H
+#define TASK_SCHEDULER_H
 
 #if ARDUINO >= 100
 #include "Arduino.h"   
