@@ -1,4 +1,6 @@
-This is a task scheduler for Arduinos with AVR chips and 16 MHz oscillators. Inspired by *[Patterns for Time-Triggered Embedded Systems](http://books.google.com/books?vid=ISBN0201331381&redir_esc=y&hl=zh-CN&sourceid=cndr)*.
+This is a task scheduler for Arduinos with a ATmega328p microcontroller. Inspired by *[Patterns for Time-Triggered Embedded Systems](http://books.google.com/books?vid=ISBN0201331381&redir_esc=y&hl=zh-CN&sourceid=cndr)*.
+
+NOTE: This library uses Timer 1 on ATmega328p, so it is incompatible some libraries using the same timer. (Such as [Servo](http://www.arduino.cc/en/Reference/Servo), [Mozzi](http://sensorium.github.io/Mozzi/), or `analogWrite` on pin 9 and 10)
 
 ## How to use?
 
